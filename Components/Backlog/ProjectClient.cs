@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-
+using System;
 namespace Backlog
 {
     public class ProjectClient : IProjectClient
@@ -11,8 +11,8 @@ namespace Backlog
         private readonly HttpClient _client;
         private readonly ILogger<ProjectClient> _logger;
         private readonly IDictionary<long, ProjectInfo> _projectCache = new Dictionary<long, ProjectInfo>();
-
-        public ProjectClient(HttpClient client, ILogger<ProjectClient> logger)
+        private readonly Func<Task<string>> _accessTokenFn;
+        public ProjectClient(HttpClient client, ILogger<ProjectClient> logger, Func<Task<string>> accessTokenFn)
         {
             _client = client;
             _logger = logger;
