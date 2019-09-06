@@ -8,3 +8,5 @@ applications:
   path: Applications/AllocationsServer/bin/Release/netcoreapp2.1/publish
   services:
   - tracker-service-registry
+  - tracker-circuit-breaker-dashboard
+  - tracker-amqp
