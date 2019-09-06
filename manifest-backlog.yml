@@ -4,9 +4,9 @@ applications:
   instances: 1
   memory: 256M
   routes:
-  - route: backlog-pal-gauri_Naresh.cfapps.io
+  - route: backlog-pal-gauri-naresh.cfapps.io
   path: Applications/BacklogServer/bin/Release/netcoreapp2.1/publish
   env:
-    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-gauri_Naresh.cfapps.io
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-gauri-naresh.cfapps.io
   services:
   - tracker-backlog-database
